@@ -32,6 +32,6 @@
     "require": {
         "php": "^8.3"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
