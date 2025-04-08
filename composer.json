@@ -1,20 +1,28 @@
 {
     "name": "zozor/zzengine",
     "description": "Light Framework for PHP",
-    "version": "0.0.1",
     "keywords": [
         "zzengine",
         "engine",
         "back"
     ],
-    "type": "project",
+    "type": "library",
+    "homepage": "https://github.com/Zorglu/zzengine",
+    "readme": "https://github.com/Zorglu/zzengine/README.md",
     "license": "MIT",
     "authors": [
         {
             "name": "zzengine",
-            "email": "zzengine01@gmail.com"
+            "email": "zzengine01@gmail.com",
+            "role": "Developer"
         }
     ],
+    "support": {
+        "email": "zzengine01@gmail.com",
+        "issues": "https://github.com/Zorglu/zzengine/issues",
+        "source": "https://github.com/Zorglu/zzengine",
+        "docs": "https://github.com/Zorglu/zzengine"
+    },
     "autoload": {
         "psr-4": {
             "zzengine\\App\\": "src/",
