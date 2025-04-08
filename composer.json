@@ -33,5 +33,5 @@
         "php": "^8.3"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": false
 }
