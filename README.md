@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/zozor/zzengine.svg?style=flat-square)](https://packagist.org/packages/zozor/zzengine)
 [![Total Downloads](https://img.shields.io/packagist/dt/zozor/zzengine.svg?style=flat-square)](https://img.shields.io/packagist/dt/zozor/zzengine.svg)
 
-A php light framework
+A php light framework for easily create robust applications
 
 ## Installation
 
