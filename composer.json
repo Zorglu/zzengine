@@ -1,0 +1,26 @@
+{
+    "name": "zozor/zzengine",
+    "description": "Light Framework for PHP",
+    "version": "0.0.1",
+    "keywords": [
+        "zzengine",
+        "engine",
+        "back"
+    ],
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zzengine",
+            "email": "zzengine01@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "zzengine\\App\\": "src/",
+            "zzengine\\Lib\\": "src/lib/"
+        }
+    },
+
+    "require": {}
+}

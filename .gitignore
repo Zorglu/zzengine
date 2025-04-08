@@ -1,0 +1,8 @@
+/composer.lock
+/vendor
+CHANGELOG.md
+README.md
+test.php
+test-class.php
+phpdoc.xml
+
