@@ -9,9 +9,9 @@ require_once(__DIR__ . "/config/session_settings.php");
 require_once(__DIR__ . "/config/database_settings.php");
 
 /**
- * Classe principale
- * Cette classe encapsule les gestionnaires de :
- * Base de données
+ * Main class
+ * This class encapsulates the handlers for:
+ * Database
  * Session
  * Request
  * Response
@@ -39,9 +39,9 @@ final class Engine{
     }
 
     /**
-     * Make a singleton instance de la class
-     * Initialize les class session, repsonse, request, DB
-     * @return object instance de la class
+     * Make a singleton instance of the class
+     * Initialize the session, response, request, DB classes
+     * @return object instance of the class
      */
     public static function &create():mixed {
         $c = __CLASS__;
@@ -53,7 +53,7 @@ final class Engine{
             self::$instance = new $c($session, $response, $request, $DB);
         }
         return self::$instance;
-	}
+    }
 
     public static function isProd():bool {
         return self::$prod;

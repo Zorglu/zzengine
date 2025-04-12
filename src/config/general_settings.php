@@ -1,5 +1,20 @@
 <?php
-define("APP_NAME", "exo_php");
-define("PROD_PATH", "/voir le chemin sur la machine de prod/");
+/**
+ * Name of the app
+ */
+define("APP_NAME", "test");
+
+/**
+ * server's path on the prod server
+ */
+define("PROD_PATH", "/var/www/mysite.com/");
+
+/**
+ * server's path on the dev server
+ */
 define("DEV_PATH", $_SERVER["DOCUMENT_ROOT"] . "/" . APP_NAME . "/");
+
+/**
+ * path to temp directory
+ */
 define("PATH_TEMP", "/tmp/");

@@ -2,7 +2,6 @@
 /vendor
 /phpdoc/cache
 CHANGELOG.md
-test.php
-test-class.php
+test*
 phpdoc.xml
 

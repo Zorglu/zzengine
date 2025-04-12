@@ -100,7 +100,8 @@
     <article class="phpdocumentor-element -file">
         <h2 class="phpdocumentor-content__title">database_settings.php</h2>
 
-        
+            <p class="phpdocumentor-summary">Name of the host hosting the database</p>
+
 
 
 
@@ -128,34 +129,53 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a class="" href="namespaces/default.html#constant_ATTR_EMULATE_PREPARES">ATTR_EMULATE_PREPARES</a>
+    <span>
+        &nbsp;= [\PDO::ATTR_ERRMODE =&gt; \PDO::ERRMODE_WARNING, \PDO::ATTR_DEFAULT_FETCH_MODE =&gt; \PDO::FETCH_OBJ, \PDO::MYSQL_ATTR_INIT_COMMAND =&gt; &#039;SET NAMES &#039; . \BDD_CHARSET, \PDO::ATTR_EMULATE_PREPARES =&gt; \false, \PDO::ATTR_STRINGIFY_FETCHES =&gt; \false]                            </span>
+</dt>
+<dd>PDO attributes settings see : https://www.php.net/manual/en/pdo.setattribute.php</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a class="" href="namespaces/default.html#constant_BDD_CHARSET">BDD_CHARSET</a>
+    <span>
+        &nbsp;= &quot;utf8&quot;                            </span>
+</dt>
+<dd>Charset used by the database</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="namespaces/default.html#constant_BDD_HOST">BDD_HOST</a>
     <span>
         &nbsp;= &quot;localhost&quot;                            </span>
 </dt>
+<dd>Name of the host hosting the database</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="namespaces/default.html#constant_BDD_NAME">BDD_NAME</a>
     <span>
-        &nbsp;= &quot;geneastat&quot;                            </span>
+        &nbsp;= &quot;test&quot;                            </span>
 </dt>
+<dd>Name of the database</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="namespaces/default.html#constant_BDD_PORT">BDD_PORT</a>
     <span>
         &nbsp;= 3306                            </span>
 </dt>
+<dd>Port number used by the database</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="namespaces/default.html#constant_BDD_PWD">BDD_PWD</a>
     <span>
         &nbsp;= &quot;123456&quot;                            </span>
 </dt>
+<dd>Password for database user</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="namespaces/default.html#constant_BDD_USER">BDD_USER</a>
     <span>
         &nbsp;= &quot;pascal&quot;                            </span>
 </dt>
+<dd>Name of the database user</dd>
 
     </dl>
 
@@ -173,6 +193,70 @@
 
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_ATTR_EMULATE_PREPARES">
+        ATTR_EMULATE_PREPARES
+        <a href="namespaces/default.html#constant_ATTR_EMULATE_PREPARES" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/config/database_settings.php"><a href="files/src-config-database-settings.html"><abbr title="src/config/database_settings.php">database_settings.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">35</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">PDO attributes settings see : https://www.php.net/manual/en/pdo.setattribute.php</p>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">ATTR_EMULATE_PREPARES</span>
+    = <span class="phpdocumentor-signature__default-value">[\PDO::ATTR_ERRMODE =&gt; \PDO::ERRMODE_WARNING, \PDO::ATTR_DEFAULT_FETCH_MODE =&gt; \PDO::FETCH_OBJ, \PDO::MYSQL_ATTR_INIT_COMMAND =&gt; &#039;SET NAMES &#039; . \BDD_CHARSET, \PDO::ATTR_EMULATE_PREPARES =&gt; \false, \PDO::ATTR_STRINGIFY_FETCHES =&gt; \false]</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_BDD_CHARSET">
+        BDD_CHARSET
+        <a href="namespaces/default.html#constant_BDD_CHARSET" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/config/database_settings.php"><a href="files/src-config-database-settings.html"><abbr title="src/config/database_settings.php">database_settings.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Charset used by the database</p>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">BDD_CHARSET</span>
+    = <span class="phpdocumentor-signature__default-value">&quot;utf8&quot;</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_BDD_HOST">
         BDD_HOST
         <a href="namespaces/default.html#constant_BDD_HOST" class="headerlink"><i class="fas fa-link"></i></a>
@@ -182,11 +266,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/config/database_settings.php"><a href="files/src-config-database-settings.html"><abbr title="src/config/database_settings.php">database_settings.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2</span>
+    <span class="phpdocumentor-element-found-in__line">5</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Name of the host hosting the database</p>
+
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -213,17 +298,18 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/config/database_settings.php"><a href="files/src-config-database-settings.html"><abbr title="src/config/database_settings.php">database_settings.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">5</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Name of the database</p>
+
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">BDD_NAME</span>
-    = <span class="phpdocumentor-signature__default-value">&quot;geneastat&quot;</span>
+    = <span class="phpdocumentor-signature__default-value">&quot;test&quot;</span>
 </code>
 
 
@@ -244,11 +330,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/config/database_settings.php"><a href="files/src-config-database-settings.html"><abbr title="src/config/database_settings.php">database_settings.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">6</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Port number used by the database</p>
+
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -275,11 +362,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/config/database_settings.php"><a href="files/src-config-database-settings.html"><abbr title="src/config/database_settings.php">database_settings.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">4</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Password for database user</p>
+
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -306,11 +394,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/config/database_settings.php"><a href="files/src-config-database-settings.html"><abbr title="src/config/database_settings.php">database_settings.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Name of the database user</p>
+
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -440,6 +529,8 @@
                             <li class="phpdocumentor-on-this-page-section__title">Constants</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="namespaces/default.html#constant_ATTR_EMULATE_PREPARES">ATTR_EMULATE_PREPARES</a></li>
+                                                    <li class=""><a href="namespaces/default.html#constant_BDD_CHARSET">BDD_CHARSET</a></li>
                                                     <li class=""><a href="namespaces/default.html#constant_BDD_HOST">BDD_HOST</a></li>
                                                     <li class=""><a href="namespaces/default.html#constant_BDD_NAME">BDD_NAME</a></li>
                                                     <li class=""><a href="namespaces/default.html#constant_BDD_PORT">BDD_PORT</a></li>

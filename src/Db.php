@@ -9,43 +9,52 @@ namespace zzengine\App;
 use PDO;
 
 /**
- * Classe statique d'accès à la base de données.
- * Cette classe est instanciée et initialisée par la classe Engine
+ * Static class for database access.
+ * This class is instantiated and initialized by the Engine class.
  *
  */
 final class Db{
     /**
-     * L'object PDO instancié par $engine
+     * The PDO object instantiated by $engine
      */
     private static PDO $db;
 
     /**
-     * Constructeur appelé par $engine en transmetant l'objet PDO pointant sur la base de données
-     * @param object $db l'object PDO instancié par $engine
+     * Constructor called by $engine, passing the PDO object pointing to the database.
+     * @param string $host
+     * @param int $port
+     * @param string $user
+     * @param string $pwd
+     * @param string $dbname
      */
-    //public function __construct(?object &$db) {
     public function __construct (string $host = "", int $port = 3306, string $user = "", string $pwd = "", string $dbname = "") {
         try{
             self::$db = new PDO("mysql:host={$host};port={$port};dbname={$dbname}", $user, $pwd);
-            self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-            self::$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-            self::$db->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET NAMES utf8');
-            self::$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-            self::$db->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, false);
-            self::$db->query('SET NAMES utf8');
+            foreach(ATTR_EMULATE_PREPARES as $key => $value){
+                self::$db->setAttribute($key, $value);
+            }
+            self::$db->query('SET NAMES ' . BDD_CHARSET);
         } catch (PDOException $e) {
-            die('Erreur class Database._construct(): ' . $e->getMessage());
+            die('Error class Database._construct(): ' . $e->getMessage());
         }
     }
 
     /**
-     * Executer une requête de sélection SQL
-     * Si les paramêtres sont fournis, la requête est préparée en utilisant les paramêtres nommés ou bien les ?
-     * Ex : $query="SELECT * FROM test WHERE ID = ?", $params = [1]
-     * Ex : $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
-     * @param string $query La requête SQL
-     * @param array $params Le tableau des paramêtres
-     * @return object retourne une seule ligne répondant à la requête ou null si la requête échoue
+     * get the PDO instance
+     * @return PDO instance of the PDO instance
+     */
+    static public function getDb():PDO{
+        return self::$db;
+    }
+
+    /**
+     * Execute a SQL select query.
+     * If parameters are provided, the query is prepared using named parameters or question marks.
+     * Ex: $query="SELECT * FROM test WHERE ID = ?", $params = [1]
+     * Ex: $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
+     * @param string $query The SQL query.
+     * @param array $params The parameter array.
+     * @return object Returns a single row matching the query, or null if the query fails.
      */
     public static function select(string $query, array $params = []): object|null{
         $result = null;
@@ -58,13 +67,13 @@ final class Db{
     }
 
     /**
-     * Executer une requête de sélection multiple SQL
-     * Si les paramêtres sont fournis, la requête est préparée en utilisant les paramêtres nommés ou bien les ?
-     * Ex : $query="SELECT * FROM test WHERE ID = ?", $params = [1]
-     * Ex : $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
-     * @param string $query La requête SQL
-     * @param array $params Le tableau des paramêtres
-     * @return array[object] retourne toutes les lignes répondants à la requête ou null si la requête échoue
+     * Execute a SQL multiple select query.
+     * If parameters are provided, the query is prepared using named parameters or question marks.
+     * Ex: $query="SELECT * FROM test WHERE ID = ?", $params = [1]
+     * Ex: $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
+     * @param string $query The SQL query.
+     * @param array $params The parameter array.
+     * @return array[object] Returns all rows matching the query, or null if the query fails.
      */
     public static function selectAll(string $query, array $params = []):object|null {
         $result = null;
@@ -77,15 +86,15 @@ final class Db{
     }
 
     /**
-     * Executer une requête de sélection multiple avec pagination SQL
-     * Si les paramêtres sont fournis, la requête est préparée en utilisant les paramêtres nommés ou bien les ?
-     * Ex : $query="SELECT * FROM test WHERE ID = ?", $params = [1]
-     * Ex : $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
-     * @param string $query La requête SQL
-     * @param array $params Le tableau des paramêtres
-     * @param int $start Index du prémier élément à lire
-     * @param int $end Index du dernier élément à lire
-     * @return array[object] retourne toutes les lignes répondants à la requête ou null si la requête échoue
+     * Execute a SQL multiple select query with pagination.
+     * If parameters are provided, the query is prepared using named parameters or question marks.
+     * Ex: $query="SELECT * FROM test WHERE ID = ?", $params = [1]
+     * Ex: $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
+     * @param string $query The SQL query.
+     * @param array $params The parameter array.
+     * @param int $start Index of the first element to read.
+     * @param int $end Index of the last element to read.
+     * @return array[object] Returns all rows matching the query, or null if the query fails.
      */
     public static function pagination(string $query, array $params = [], int $start = 0, int $end = 10):array|null{
         $result = null;
@@ -98,14 +107,14 @@ final class Db{
     }
 
     /**
-     * Executer une requête d'insertion SQL
-     * Si les paramêtres sont fournis, la requête est préparée en utilisant les paramêtres nommés ou bien les ?
-     * Ex : $query="SELECT * FROM test WHERE ID = ?", $params = [1]
-     * Ex : $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
-     * @param string $query La requête SQL
-     * @param array $params Le tableau des paramêtres
-     * @param bool $getid True s'il faut retourné l'ID du dernier élément inséré
-     * @return bool|string retourne True si la requête s'est éxécutée et False sinon mais aussi l'ID du dernier élément inséré si $getif == true
+     * Execute a SQL insert query.
+     * If parameters are provided, the query is prepared using named parameters or question marks.
+     * Ex: $query="SELECT * FROM test WHERE ID = ?", $params = [1]
+     * Ex: $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
+     * @param string $query The SQL query.
+     * @param array $params The parameter array.
+     * @param bool $getid True if the ID of the last inserted element should be returned.
+     * @return bool|string Returns True if the query was executed, False otherwise, and the ID of the last inserted element if $getid == true.
      */
     public static function insert(string $query, array $params = [], bool $getid = false):bool|string {
         $result = false;
@@ -120,13 +129,13 @@ final class Db{
     }
 
     /**
-     * Executer une requête de mise à jour SQL
-     * Si les paramêtres sont fournis, la requête est préparée en utilisant les paramêtres nommés ou bien les ?
-     * Ex : $query="SELECT * FROM test WHERE ID = ?", $params = [1]
-     * Ex : $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
-     * @param string $query La requête SQL
-     * @param array $params Le tableau des paramêtres
-     * @return bool retourne True si la requête s'est éxécutée et False sinon
+     * Execute a SQL update query.
+     * If parameters are provided, the query is prepared using named parameters or question marks.
+     * Ex: $query="SELECT * FROM test WHERE ID = ?", $params = [1]
+     * Ex: $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
+     * @param string $query The SQL query.
+     * @param array $params The parameter array.
+     * @return bool Returns True if the query was executed, False otherwise.
      */
     public static function update(string $query, array $params = []):bool {
         $result = false;
@@ -138,13 +147,13 @@ final class Db{
     }
 
     /**
-     * Executer une requête de suppression SQL
-     * Si les paramêtres sont fournis, la requête est préparée en utilisant les paramêtres nommés ou bien les ?
-     * Ex : $query="SELECT * FROM test WHERE ID = ?", $params = [1]
-     * Ex : $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
-     * @param string $query La requête SQL
-     * @param array $params Le tableau des paramêtres
-     * @return bool retourne True si la requête s'est éxécutée et False sinon
+     * Execute a SQL delete query.
+     * If parameters are provided, the query is prepared using named parameters or question marks.
+     * Ex: $query="SELECT * FROM test WHERE ID = ?", $params = [1]
+     * Ex: $query="SELECT * FROM test WHERE ID = :id", $params = ["id" -> 1]
+     * @param string $query The SQL query.
+     * @param array $params The parameter array.
+     * @return bool Returns True if the query was executed, False otherwise.
      */
     public static function delete(string $query, array $params = []):bool {
         $result = false;
@@ -156,13 +165,13 @@ final class Db{
     }
 
     /**
-     * Execute une instruction SQL
+     * Execute a SQL statement.
      *
-     * Permet d'envoyer à la base de données une instructions simple sans parametre
-     * et sans retour de données ormis le résultat de l'excution de la fonction (true/false)
+     * Allows sending a simple instruction to the database without parameters
+     * and without returning data, except for the result of the function execution (true/false).
      *
-     * @param string $query La requête SQL à éxécuter
-     * @return bool True si la commande s'est bien éxécutée et False sinon
+     * @param string $query The SQL query to execute.
+     * @return bool True if the command was executed successfully, False otherwise.
      */
     public static function statement(string $query): bool{
         $result = false;
@@ -174,9 +183,9 @@ final class Db{
     }
 
     /**
-     * Executer une requête non-préparée SQL
-     * @param string $query La requête SQL
-     * @return bool retourne True si la requête s'est éxécutée et False sinon
+     * Execute a non-prepared SQL query.
+     * @param string $query The SQL query.
+     * @return bool Returns True if the query was executed, False otherwise.
      */
     public static function unprepared(string $query):bool {
         $result = null;
@@ -186,4 +195,48 @@ final class Db{
         }
         return $result;
     }
+
+    /**
+     * Prepares a statement for execution
+     * @param string $query a SQL statement template
+     * @return PDOStatement|bool Returns PDOStatement on success or false on failure
+     */
+    public static function prepared(string $query) {
+        return self::$db->prepare($query);
+    }
+
+    /**
+     *  Executes a prepared statement
+     * @param PDOStatement $request a PDO Statement gattered with ::prepared() method
+     * @param array An array of values with as many elements as there are bound parameters with prepared query
+     * @return bool Returns true on success or false on failure
+     */
+    public static function execute(mixed $request, array $params = []):bool {
+        return $request->execute($params);
+    }
+
+    /**
+     * Initiates a transaction
+     * @return bool Returns true on success or false on failure
+     */
+    public static function beginTransaction():bool {
+        return self::$db->beginTransaction();
+    }
+
+    /**
+     *  Commits a transaction
+     * @return bool Returns true on success or false on failure
+     */
+    public static function commit():bool {
+        return self::$db->commit();
+    }
+
+    /**
+     * Rolls back a transaction
+     * @return bool Returns true on success or false on failure
+     */
+    public static function rollBack(): bool{
+        return self::$db->rollBack();
+    }
+
 }

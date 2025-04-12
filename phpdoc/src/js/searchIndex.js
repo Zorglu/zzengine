@@ -3,117 +3,157 @@ Search.appendIndex(
                 {
             "fqsen": "\\BDD_HOST",
             "name": "BDD_HOST",
-            "summary": "",
+            "summary": "Name\u0020of\u0020the\u0020host\u0020hosting\u0020the\u0020database",
             "url": "namespaces/default.html#constant_BDD_HOST"
         },                {
             "fqsen": "\\BDD_USER",
             "name": "BDD_USER",
-            "summary": "",
+            "summary": "Name\u0020of\u0020the\u0020database\u0020user",
             "url": "namespaces/default.html#constant_BDD_USER"
         },                {
             "fqsen": "\\BDD_PWD",
             "name": "BDD_PWD",
-            "summary": "",
+            "summary": "Password\u0020for\u0020database\u0020user",
             "url": "namespaces/default.html#constant_BDD_PWD"
         },                {
             "fqsen": "\\BDD_NAME",
             "name": "BDD_NAME",
-            "summary": "",
+            "summary": "Name\u0020of\u0020the\u0020database",
             "url": "namespaces/default.html#constant_BDD_NAME"
         },                {
             "fqsen": "\\BDD_PORT",
             "name": "BDD_PORT",
-            "summary": "",
+            "summary": "Port\u0020number\u0020used\u0020by\u0020the\u0020database",
             "url": "namespaces/default.html#constant_BDD_PORT"
+        },                {
+            "fqsen": "\\BDD_CHARSET",
+            "name": "BDD_CHARSET",
+            "summary": "Charset\u0020used\u0020by\u0020the\u0020database",
+            "url": "namespaces/default.html#constant_BDD_CHARSET"
+        },                {
+            "fqsen": "\\ATTR_EMULATE_PREPARES",
+            "name": "ATTR_EMULATE_PREPARES",
+            "summary": "PDO\u0020attributes\u0020settings\u0020see\u0020\u003A\u0020https\u003A\/\/www.php.net\/manual\/en\/pdo.setattribute.php",
+            "url": "namespaces/default.html#constant_ATTR_EMULATE_PREPARES"
         },                {
             "fqsen": "\\APP_NAME",
             "name": "APP_NAME",
-            "summary": "",
+            "summary": "Name\u0020of\u0020the\u0020app",
             "url": "namespaces/default.html#constant_APP_NAME"
         },                {
             "fqsen": "\\PROD_PATH",
             "name": "PROD_PATH",
-            "summary": "",
+            "summary": "server\u0027s\u0020path\u0020on\u0020the\u0020prod\u0020server",
             "url": "namespaces/default.html#constant_PROD_PATH"
         },                {
             "fqsen": "\\DEV_PATH",
             "name": "DEV_PATH",
-            "summary": "",
+            "summary": "server\u0027s\u0020path\u0020on\u0020the\u0020dev\u0020server",
             "url": "namespaces/default.html#constant_DEV_PATH"
         },                {
             "fqsen": "\\PATH_TEMP",
             "name": "PATH_TEMP",
-            "summary": "",
+            "summary": "path\u0020to\u0020temp\u0020directory",
             "url": "namespaces/default.html#constant_PATH_TEMP"
         },                {
             "fqsen": "\\SESSION_NAME",
             "name": "SESSION_NAME",
-            "summary": "",
+            "summary": "session\u0027name",
             "url": "namespaces/default.html#constant_SESSION_NAME"
         },                {
             "fqsen": "\\SESSION_LIFETIME",
             "name": "SESSION_LIFETIME",
-            "summary": "",
+            "summary": "session\u0027s\u0020lifetime\u0020in\u0020seconds",
             "url": "namespaces/default.html#constant_SESSION_LIFETIME"
         },                {
             "fqsen": "\\zzengine\\App\\Db",
             "name": "Db",
-            "summary": "Classe\u0020statique\u0020d\u0027acc\u00E8s\u0020\u00E0\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
+            "summary": "Static\u0020class\u0020for\u0020database\u0020access.",
             "url": "classes/zzengine-App-Db.html"
         },                {
             "fqsen": "\\zzengine\\App\\Db\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructeur\u0020appel\u00E9\u0020par\u0020\u0024engine\u0020en\u0020transmetant\u0020l\u0027objet\u0020PDO\u0020pointant\u0020sur\u0020la\u0020base\u0020de\u0020donn\u00E9es",
+            "summary": "Constructor\u0020called\u0020by\u0020\u0024engine,\u0020passing\u0020the\u0020PDO\u0020object\u0020pointing\u0020to\u0020the\u0020database.",
             "url": "classes/zzengine-App-Db.html#method___construct"
+        },                {
+            "fqsen": "\\zzengine\\App\\Db\u003A\u003AgetDb\u0028\u0029",
+            "name": "getDb",
+            "summary": "get\u0020the\u0020PDO\u0020instance",
+            "url": "classes/zzengine-App-Db.html#method_getDb"
         },                {
             "fqsen": "\\zzengine\\App\\Db\u003A\u003Aselect\u0028\u0029",
             "name": "select",
-            "summary": "Executer\u0020une\u0020requ\u00EAte\u0020de\u0020s\u00E9lection\u0020SQL\nSi\u0020les\u0020param\u00EAtres\u0020sont\u0020fournis,\u0020la\u0020requ\u00EAte\u0020est\u0020pr\u00E9par\u00E9e\u0020en\u0020utilisant\u0020les\u0020param\u00EAtres\u0020nomm\u00E9s\u0020ou\u0020bien\u0020les\u0020\u003F\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003F\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B1\u005D\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003Aid\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B\u0022id\u0022\u0020\u002D\u003E\u00201\u005D",
+            "summary": "Execute\u0020a\u0020SQL\u0020select\u0020query.",
             "url": "classes/zzengine-App-Db.html#method_select"
         },                {
             "fqsen": "\\zzengine\\App\\Db\u003A\u003AselectAll\u0028\u0029",
             "name": "selectAll",
-            "summary": "Executer\u0020une\u0020requ\u00EAte\u0020de\u0020s\u00E9lection\u0020multiple\u0020SQL\nSi\u0020les\u0020param\u00EAtres\u0020sont\u0020fournis,\u0020la\u0020requ\u00EAte\u0020est\u0020pr\u00E9par\u00E9e\u0020en\u0020utilisant\u0020les\u0020param\u00EAtres\u0020nomm\u00E9s\u0020ou\u0020bien\u0020les\u0020\u003F\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003F\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B1\u005D\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003Aid\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B\u0022id\u0022\u0020\u002D\u003E\u00201\u005D",
+            "summary": "Execute\u0020a\u0020SQL\u0020multiple\u0020select\u0020query.",
             "url": "classes/zzengine-App-Db.html#method_selectAll"
         },                {
             "fqsen": "\\zzengine\\App\\Db\u003A\u003Apagination\u0028\u0029",
             "name": "pagination",
-            "summary": "Executer\u0020une\u0020requ\u00EAte\u0020de\u0020s\u00E9lection\u0020multiple\u0020avec\u0020pagination\u0020SQL\nSi\u0020les\u0020param\u00EAtres\u0020sont\u0020fournis,\u0020la\u0020requ\u00EAte\u0020est\u0020pr\u00E9par\u00E9e\u0020en\u0020utilisant\u0020les\u0020param\u00EAtres\u0020nomm\u00E9s\u0020ou\u0020bien\u0020les\u0020\u003F\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003F\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B1\u005D\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003Aid\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B\u0022id\u0022\u0020\u002D\u003E\u00201\u005D",
+            "summary": "Execute\u0020a\u0020SQL\u0020multiple\u0020select\u0020query\u0020with\u0020pagination.",
             "url": "classes/zzengine-App-Db.html#method_pagination"
         },                {
             "fqsen": "\\zzengine\\App\\Db\u003A\u003Ainsert\u0028\u0029",
             "name": "insert",
-            "summary": "Executer\u0020une\u0020requ\u00EAte\u0020d\u0027insertion\u0020SQL\nSi\u0020les\u0020param\u00EAtres\u0020sont\u0020fournis,\u0020la\u0020requ\u00EAte\u0020est\u0020pr\u00E9par\u00E9e\u0020en\u0020utilisant\u0020les\u0020param\u00EAtres\u0020nomm\u00E9s\u0020ou\u0020bien\u0020les\u0020\u003F\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003F\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B1\u005D\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003Aid\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B\u0022id\u0022\u0020\u002D\u003E\u00201\u005D",
+            "summary": "Execute\u0020a\u0020SQL\u0020insert\u0020query.",
             "url": "classes/zzengine-App-Db.html#method_insert"
         },                {
             "fqsen": "\\zzengine\\App\\Db\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
-            "summary": "Executer\u0020une\u0020requ\u00EAte\u0020de\u0020mise\u0020\u00E0\u0020jour\u0020SQL\nSi\u0020les\u0020param\u00EAtres\u0020sont\u0020fournis,\u0020la\u0020requ\u00EAte\u0020est\u0020pr\u00E9par\u00E9e\u0020en\u0020utilisant\u0020les\u0020param\u00EAtres\u0020nomm\u00E9s\u0020ou\u0020bien\u0020les\u0020\u003F\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003F\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B1\u005D\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003Aid\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B\u0022id\u0022\u0020\u002D\u003E\u00201\u005D",
+            "summary": "Execute\u0020a\u0020SQL\u0020update\u0020query.",
             "url": "classes/zzengine-App-Db.html#method_update"
         },                {
             "fqsen": "\\zzengine\\App\\Db\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "Executer\u0020une\u0020requ\u00EAte\u0020de\u0020suppression\u0020SQL\nSi\u0020les\u0020param\u00EAtres\u0020sont\u0020fournis,\u0020la\u0020requ\u00EAte\u0020est\u0020pr\u00E9par\u00E9e\u0020en\u0020utilisant\u0020les\u0020param\u00EAtres\u0020nomm\u00E9s\u0020ou\u0020bien\u0020les\u0020\u003F\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003F\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B1\u005D\nEx\u0020\u003A\u0020\u0024query\u003D\u0022SELECT\u0020\u002A\u0020FROM\u0020test\u0020WHERE\u0020ID\u0020\u003D\u0020\u003Aid\u0022,\u0020\u0024params\u0020\u003D\u0020\u005B\u0022id\u0022\u0020\u002D\u003E\u00201\u005D",
+            "summary": "Execute\u0020a\u0020SQL\u0020delete\u0020query.",
             "url": "classes/zzengine-App-Db.html#method_delete"
         },                {
             "fqsen": "\\zzengine\\App\\Db\u003A\u003Astatement\u0028\u0029",
             "name": "statement",
-            "summary": "Execute\u0020une\u0020instruction\u0020SQL",
+            "summary": "Execute\u0020a\u0020SQL\u0020statement.",
             "url": "classes/zzengine-App-Db.html#method_statement"
         },                {
             "fqsen": "\\zzengine\\App\\Db\u003A\u003Aunprepared\u0028\u0029",
             "name": "unprepared",
-            "summary": "Executer\u0020une\u0020requ\u00EAte\u0020non\u002Dpr\u00E9par\u00E9e\u0020SQL",
+            "summary": "Execute\u0020a\u0020non\u002Dprepared\u0020SQL\u0020query.",
             "url": "classes/zzengine-App-Db.html#method_unprepared"
+        },                {
+            "fqsen": "\\zzengine\\App\\Db\u003A\u003Aprepared\u0028\u0029",
+            "name": "prepared",
+            "summary": "Prepares\u0020a\u0020statement\u0020for\u0020execution",
+            "url": "classes/zzengine-App-Db.html#method_prepared"
+        },                {
+            "fqsen": "\\zzengine\\App\\Db\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "Executes\u0020a\u0020prepared\u0020statement",
+            "url": "classes/zzengine-App-Db.html#method_execute"
+        },                {
+            "fqsen": "\\zzengine\\App\\Db\u003A\u003AbeginTransaction\u0028\u0029",
+            "name": "beginTransaction",
+            "summary": "Initiates\u0020a\u0020transaction",
+            "url": "classes/zzengine-App-Db.html#method_beginTransaction"
+        },                {
+            "fqsen": "\\zzengine\\App\\Db\u003A\u003Acommit\u0028\u0029",
+            "name": "commit",
+            "summary": "Commits\u0020a\u0020transaction",
+            "url": "classes/zzengine-App-Db.html#method_commit"
+        },                {
+            "fqsen": "\\zzengine\\App\\Db\u003A\u003ArollBack\u0028\u0029",
+            "name": "rollBack",
+            "summary": "Rolls\u0020back\u0020a\u0020transaction",
+            "url": "classes/zzengine-App-Db.html#method_rollBack"
         },                {
             "fqsen": "\\zzengine\\App\\Db\u003A\u003A\u0024db",
             "name": "db",
-            "summary": "L\u0027object\u0020PDO\u0020instanci\u00E9\u0020par\u0020\u0024engine",
+            "summary": "The\u0020PDO\u0020object\u0020instantiated\u0020by\u0020\u0024engine",
             "url": "classes/zzengine-App-Db.html#property_db"
         },                {
             "fqsen": "\\zzengine\\App\\Engine",
             "name": "Engine",
-            "summary": "Classe\u0020principale\nCette\u0020classe\u0020encapsule\u0020les\u0020gestionnaires\u0020de\u0020\u003A\nBase\u0020de\u0020donn\u00E9es\nSession\nRequest\nResponse",
+            "summary": "Main\u0020class\nThis\u0020class\u0020encapsulates\u0020the\u0020handlers\u0020for\u003A\nDatabase\nSession\nRequest\nResponse",
             "url": "classes/zzengine-App-Engine.html"
         },                {
             "fqsen": "\\zzengine\\App\\Engine\u003A\u003A__construct\u0028\u0029",
@@ -123,7 +163,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\zzengine\\App\\Engine\u003A\u003Acreate\u0028\u0029",
             "name": "create",
-            "summary": "Make\u0020a\u0020singleton\u0020instance\u0020de\u0020la\u0020class\nInitialize\u0020les\u0020class\u0020session,\u0020repsonse,\u0020request,\u0020DB",
+            "summary": "Make\u0020a\u0020singleton\u0020instance\u0020of\u0020the\u0020class\nInitialize\u0020the\u0020session,\u0020response,\u0020request,\u0020DB\u0020classes",
             "url": "classes/zzengine-App-Engine.html#method_create"
         },                {
             "fqsen": "\\zzengine\\App\\Engine\u003A\u003AisProd\u0028\u0029",
