@@ -60,7 +60,7 @@ final class Session{
      * @param string $var_name Le nom de la variable
      * @return void
      */
-    public static function removeValue(string $var_name):bool {
+    public static function removeValue(string $var_name):void {
         if (isset($_SESSION[$var_name])){
             unset($_SESSION[$var_name]);
         }
